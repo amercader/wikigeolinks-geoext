@@ -17,7 +17,7 @@ App.main = (function() {
      * You probably don't need to worry about the OpenLayers paths.
      */
 
-    articlesServiceURL = "proxy.php?url=http://localhost:5000/articles"
+    articlesServiceURL = "/dev/wikigeolinks-service/articles"
 
     OpenLayers.ImgPath = "lib/openlayers/img/";
 
