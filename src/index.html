@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="http://amercader.net/img/favicon.ico">
+
+        <meta name="description" content="This site lets you explore how the georeferenced articles of the Wikipedia are connected. Visualize the relations between articles on an interactive map." />
+        <meta name="keywords" content="Wikipedia, DBPedia, articles, georeferenced, MapFish, GeoExt, OpenLayers" />
+
+        <title>Adri&agrave; Mercader - Wikipedia Geo-Relations</title>
+
+        <link rel="stylesheet" type="text/css" href="lib/ext/Ext/resources/css/ext-all.css"></link>
+        <link rel="stylesheet" type="text/css" href="lib/ext/Ext/resources/css/xtheme-gray.css"></link>
+        <link rel="stylesheet" type="text/css" href="lib/geoext/resources/css/popup.css" />
+
+        <link rel="stylesheet" type="text/css" href="lib/openlayers/theme/default/style.css" />
+        <link rel="stylesheet" type="text/css" href="app/css/main.css"></link>
+    </head>
+
+    <body>
+
+        <div id="about" class="x-hidden">
+            <div class="x-window-header">About / Help</div>
+            <div id="about_content">
+                <div class="x-tab" title="How it works">
+                    <div><p>This site lets you explore how the georeferenced articles of
+                    the Wikipedia are connected.</p></div>
+                    <div>
+                        <p><strong>1.</strong> Look for an article to start with:</p>
+                        <p><em>Ctrl + click</em> on the map to query for nearby articles or
+                        <em>search</em> for an article in the top right text box:</p>
+                    </div>
+                    <div class="center">
+                        <img src="app/img/help_query.png" alt="Spatial query" />
+                    </div>
+                    <p>Not only places can be georeferenced, you can try something like <em>David Livingstone</em> or <em>Mike the Tiger</em>.</p>
+                    <div>
+                        <p><strong>2.</strong> Click on the linked articles to see their connections, or
+                        the link in the popup to open the Wikipedia article.</p>
+                    </div>
+                    <div class="center">
+                         <img src="app/img/help_link.png" alt="Open links" />
+                    </div>
+                    <div>
+                    <p>Drag the map to pan, mouse wheel or double click to zoom.</p>
+                    <p>That's pretty much it.</p></div>
+                </div>
+                 <div class="x-tab" title="Known issues">
+                    <ul class="list">
+                        <li>Chrome users: Sometimes the popups with the Wikipedia link fall over the linked articles circles.
+                        I'm not sure whose fault is it (the app, GeoExt or OpenLayers), but I haven't been able to fix it yet.
+                        <div class="center">
+                             <img src="app/img/bug_chrome.png" alt="Chrome_bug" />
+                        </div>
+                        </li>
+                        <li>Internet Explorer (tested on version 8) will struggle to render articles with a lot of connections.
+                        Firefox and Chrome should behave fine.</li>
+                        <li>Some articles can fall out of the map if you look for something around the poles
+                        (like <em>Bulgarian toponyms in Antarctica</em>)</li>
+                        <li>The articles were extracted on <strong>March 2010</strong>. The datasets may not
+                        reflect the current location of the articles, or even existing articles.</li>
+                        <li>Obviously, some articles are wrongly located, they just reflect the
+                         coordinates that the original Wikipedia editor entered.</li>
+                        <li>There are some articles, like <em>Apollo 11</em> or <em>Olympus Mons</em>
+                        that have geographic coordinates, but are obviously not referred to the Earth.
+                        The DBpedia datasets provide no means of filtering this 'extraterrestrial' articles.</li>
+                    </ul>
+
+                </div>
+                <div class="x-tab" title="About">
+                    <p><strong>Adrià Mercader</strong><br/>
+                        <a href="http://amercader.net">http://amercader.net</a> |
+                        <a href="http://twitter.com/amercader">@amercader</a> |
+                        amercadero at gmail.com
+                    </p>
+                    <p>
+                    I wrote this app to play around with some of the fantastic datasets
+                    that provides <a href="http://dbpedia.org">DBPedia</a>, specially
+                    the "Geographic coordinates" one, that holds the geographic location
+                    of more than 380.000 Wikipedia articles. You can find the dataset
+                    prepared in various formats on my site:
+                    </p>
+                    <p><a href="http://amercader.net/dev/wikipedia">http://amercader.net/dev/wikipedia</a></p>
+                    <p>
+                    I loaded the articles and their relations in a <a href="http://postgis.refractions.net/">PostGIS</a>
+                    database, and build a geoservice with the <a href="http://mapfish.org">MapFish</a> geospatial
+                    framework, based on <a href="http://pylonshq.org">Pylons</a>. On the client side, the viewer is built with <a href="http://geoext.org">GeoExt</a>
+                    and <a href="http://openlayers.org">OpenLayers</a>, with a base map from OpenStreetMap and
+                    imagery from Bing.
+                    </p>
+                    <p>I would love to hear your comments and feedback!</p>
+               </div>
+
+            </div>
+    </div>
+        <!-- Uncomment these for debug mode -->
+        <!--
+        <script type="text/javascript" src="lib/ext/Ext/ext-all-debug.js"></script>
+        <script type="text/javascript" src="lib/openlayers/OpenLayers.js"></script>
+        <script type="text/javascript" src="lib/geoext/lib/GeoExt.js"></script>
+
+        <script type="text/javascript" src="app/lib/App/spatial_query.js"></script>
+        <script type="text/javascript" src="app/lib/App/layout.js"></script>
+        <script type="text/javascript" src="app/lib/App/main.js"></script>
+        -->
+        <script type="text/javascript" src="build/app.js"></script>
+    </body>
+</html>

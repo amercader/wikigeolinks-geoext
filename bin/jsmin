@@ -1,0 +1,9 @@
+#!/home/adria/dev/mapfish-2.0/env/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'JSTools==0.1.5','console_scripts','jsmin'
+__requires__ = 'JSTools==0.1.5'
+import sys
+from pkg_resources import load_entry_point
+
+sys.exit(
+   load_entry_point('JSTools==0.1.5', 'console_scripts', 'jsmin')()
+)
