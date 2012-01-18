@@ -2,7 +2,7 @@ wikigeolinks v1 (GeoExt)
 ========================
 
 
-http://amercader.net/dev/wikigeolinks
+http://amercader.net/dev/wikigeolinks-geoext
 
 
 A web application that lets you explore interactively how the georeferenced
